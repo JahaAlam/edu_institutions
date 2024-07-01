@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useEffect } from "react";
 
 const MyLocation = () => {
   useEffect(() => {

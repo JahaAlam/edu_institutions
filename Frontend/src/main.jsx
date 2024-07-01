@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "/login:id}",
+        path: "/login:id",
         element: <UserProfile></UserProfile>,
       },
       {
@@ -53,10 +53,10 @@ const router = createBrowserRouter([
         element: <EditAddress></EditAddress>,
       },
 
-      {
-        path: "/mapview",
-        element: <MapView></MapView>,
-      },
+      // {
+      //   path: "/mapview",
+      //   element: <MapView></MapView>,
+      // },
       {
         path: "/mapview/:category",
         element: <MapView></MapView>,

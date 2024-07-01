@@ -1,11 +1,15 @@
 import Categories from "../Categories/Categories";
+import MapView from "../MapView/MapView";
+
 //import MyLocation from "../MyLocation/MyLocation";
 
 const Home = () => {
   return (
-    <div>
-      <Categories></Categories>
-    </div>
+    <>
+      <div>
+        <MapView />
+      </div>
+    </>
   );
 };
 

@@ -9,11 +9,9 @@ import { MapContext } from "../../context/mapContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 //-------------------------------------------
-import Categories from "../Categories/Categories";
-// Fix the default icon issue with Leaflet
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-0;
+import Categories from "../Categories/Categories";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -32,6 +30,7 @@ const MapView = () => {
 
   const { data, fetchData } = useContext(MapContext);
   const { user } = useAuthContext();
+  console.log(user);
 
   useEffect(() => {
     if (category) {
@@ -120,13 +119,11 @@ const MapView = () => {
       <div>
         <Categories></Categories>
       </div>
-      <div className="mx-w-full">
-        <div className="flex justify-center items-center  ">
+      <div className=" ">
+        <div className=" fixed w-full h-full max-w-auto ">
           <div
-            // className="bg-white shadow-lg rounded-lg overflow-hidden "
-            // style={{ width: "900px", height: "900px" }}
             className="bg-white shadow-lg rounded-lg "
-            style={{ width: "900px", height: "900px" }}
+            style={{ width: "100%", height: "100%" }}
           >
             <MapContainer
               center={[50.831058558590399, 12.8774888058499]}

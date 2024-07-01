@@ -39,13 +39,13 @@ const signupUser = async (req, res) => {
 
 const getFavorite = async (req, res) => {
   const { id, favorite } = req.body;
-  const userId = req.user._id; // Assume you get user ID from auth middleware
+  const userId = req.userId; // Assume you get user ID from auth middleware
 
   try {
     const user = await User.findById(userId);
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: "User not found" });
     }
 
     if (favorite) {
@@ -53,13 +53,17 @@ const getFavorite = async (req, res) => {
         user.favorites.push(id);
       }
     } else {
-      user.favorites = user.favorites.filter(favId => favId !== id);
+      user.favorites = user.favorites.filter((favId) => favId !== id);
     }
 
     await user.save();
-    res.status(200).json({ message: 'Favorite status updated', favorites: user.favorites });
+    res
+      .status(200)
+      .json({ message: "Favorite status updated", favorites: user.favorites });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error', error: error.message });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: error.message });
   }
 };
 
