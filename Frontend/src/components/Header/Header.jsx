@@ -35,24 +35,29 @@ function Header() {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/signup"
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
-        >
-          Registration
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
-        >
-          Login
-        </NavLink>
-      </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+            >
+              Registration
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+            >
+              Login
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
+  
 
   return (
     <div className="navbar bg-base-100">

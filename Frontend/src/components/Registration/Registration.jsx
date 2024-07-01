@@ -19,7 +19,7 @@ const Registration = () => {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-400 px-5">
-      <div className="w-full max-w-md mx-auto">
+      <div className=" max-w-md mx-auto">
         <div className="p-6 rounded-lg bg-white text-gray-900">
           <h1 className="text-2xl font-semibold text-center">Registration</h1>
           <form className="mt-8 space-y-4" onSubmit={handleRegistration}>
